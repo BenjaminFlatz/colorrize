@@ -1,0 +1,19 @@
+<resources>
+
+
+    <string name="app_name">LUMINA</string>
+    <string name="title_rgb">RGB</string>
+    <string name="title_tw">Tunable White</string>
+    <string name="title_anim">Animations</string>
+    <string name="title_device">Devices</string>
+    <string name="validation_empty">Please enter values</string>
+    <string name="sine">sine</string>
+    <string name="rect">rectangular</string>
+    <string name="tri">triangular</string>
+    <string name="title_activity_main_tabbed">MainTabbedActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

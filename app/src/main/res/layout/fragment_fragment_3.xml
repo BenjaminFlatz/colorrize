@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:layout_marginBottom="60dp"
+    tools:context=".ui.Fragment_3">
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <WebView
+            android:id="@+id/wv_anim_9"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <WebView
+            android:id="@+id/wv_anim_8"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <WebView
+            android:id="@+id/wv_anim_7"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <WebView
+            android:id="@+id/wv_anim_6"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <WebView
+            android:id="@+id/wv_anim_5"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <WebView
+            android:id="@+id/wv_anim_4"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <WebView
+            android:id="@+id/wv_anim_3"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <WebView
+            android:id="@+id/wv_anim_2"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <WebView
+            android:id="@+id/wv_anim_1"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
+        <WebView
+            android:id="@+id/wv_anim_0"
+            android:layout_width="0dp"
+            android:layout_height="0dp">
+
+        </WebView>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/fab_anim_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_add_anim"
+            style="@style/Widget.MaterialComponents.FloatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/fab_margin"
+            android:clickable="true"
+            app:srcCompat="@drawable/ic_add" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_anim"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/linearLayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

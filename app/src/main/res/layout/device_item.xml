@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="rounded_corners"
+    android:id="@+id/layout_anim"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="8dp"
+    android:background="@color/colorPrimaryDark">
+
+    <ImageView
+        android:id="@+id/iv_device"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="@dimen/image_margin" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_device_name"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ex Device"
+            android:textColor="@color/textColor" />
+
+        <TextView
+            android:id="@+id/tv_device_ip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="123.123.123.123"
+            android:textColor="@color/textColorDark" />
+
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/switch_device"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="@dimen/object_margin"
+        android:layout_weight="1"
+        android:theme="@style/AppTheme" />
+
+
+</LinearLayout>

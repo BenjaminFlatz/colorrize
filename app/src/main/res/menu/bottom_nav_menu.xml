@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_1"
+        android:icon="@drawable/ic_rgb"
+        android:title="@string/title_rgb"/>
+
+    <item
+        android:id="@+id/navigation_2"
+        android:icon="@drawable/ic_tw"
+        android:title="@string/title_tw"/>
+
+    <item
+        android:id="@+id/navigation_3"
+        android:icon="@drawable/ic_play"
+        android:title="@string/title_anim"/>
+    <item
+        android:id="@+id/navigation_4"
+        android:icon="@drawable/ic_device"
+        android:title="@string/title_device"/>
+
+</menu>

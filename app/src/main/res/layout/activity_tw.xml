@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/color_layout_tw"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".RGBActivity">
+
+    <!--com.goodiebag.protractorview.ProtractorView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:thumb="@drawable/color_wheel"
+        app:arcColor="#4a4a4a"
+        app:arcProgressColor="#FF0000"
+        app:tickColor="#4a4a4a"
+        app:tickProgressColor="#abe6"
+        app:textColor="#000"
+        app:textProgressColor="#FF0000"
+        app:angleTextSize="10sp"
+        app:arcWidth="4dp"
+        app:progressWidth="4dp"
+        app:tickOffset="18dp"
+        app:tickLength="10dp"
+        app:angle="15"
+        app:tickIntervals="15"
+        app:ticksBetweenLabel="three"
+        app:touchInside="true"
+        app:roundEdges="true"
+        tools:ignore="MissingConstraints" /-->
+
+
+    <!--ImageView
+        android:id="@+id/iv_tw"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/color_tw" /-->
+
+    <WebView
+        android:id="@+id/wv_tw_0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/wv_tw_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/wv_tw_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/wv_tw_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/wv_tw_4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/wv_tw_5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/wv_tw_6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/wv_tw_7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/wv_tw_8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <WebView
+        android:id="@+id/wv_tw_9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.goodiebag.protractorview.ProtractorView
+        android:id="@+id/protractor_view"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:arcColor="@color/colorAccent"
+        app:arcProgressColor="@color/colorAccent1"
+        app:tickColor="@color/colorAccent"
+        app:tickProgressColor="@color/colorAccent1"
+        app:textColor="#000"
+        app:textProgressColor="@color/textColor"
+        app:angleTextSize="10sp"
+        app:arcWidth="4dp"
+        app:progressWidth="4dp"
+        app:tickOffset="18dp"
+        app:tickLength="10dp"
+        app:angle="15"
+        app:tickIntervals="15"
+        app:ticksBetweenLabel="three"
+        app:touchInside="true"
+        app:roundEdges="true"
+        tools:ignore="MissingConstraints" />
+    <SeekBar
+        android:id="@+id/sb_tw"
+        style="@style/Widget.AppCompat.SeekBar"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_margin="16dp"
+        android:max="1000"
+        android:progress="1000"
+        android:progressTint="@color/colorAccent"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wv_tw_0"
+        app:layout_constraintVertical_bias="0.691" />
+
+    <TextView
+        android:id="@+id/tv_color_tw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="120dp"
+        android:textColor="@color/textColor"
+        android:textSize="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/sb_tw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wv_tw_0"
+        app:layout_constraintVertical_bias="0.915"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
