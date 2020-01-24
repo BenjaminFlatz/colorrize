@@ -4,6 +4,15 @@ This LED control app works with an ESP8266 Module the colors are transmitted via
 
 request example: 192.168.137.122/?r255g255b255m10d10l255&
 
+
+MainActivity/NavigationDrawer
+
+this Activity handles the navigation between the 4 Fragments
+it also contains the holder for the fragments and a drawer layout that contains the app name,
+logo and a recycler view with the devices
+![alt text](https://github.com/wrusl/lumina/blob/master/Screenshot_20200124-151202_LUMINA.jpg)hub.com/wrusl/lumina/blob/master/Screenshot_20200124-151130_LUMINA.jpg)
+
+
 Fragment_1
 
 this is the RGB Fragment contains a colorPicker with grey selector wheel
@@ -15,7 +24,7 @@ Fragment_2
 
 this is the Tunable White fragment that contains two seekBars that control
 Tunable White value and brightness both of them send the rgb values to the selected ip
-![alt text](https://github.com/wrusl/lumina/blob/master/Screenshot_20200124-151130_LUMINA.jpg)
+![alt text](https://git
 
 
 Fragment_3
@@ -24,14 +33,6 @@ this is the Animations Fragment it contains a recyclerView
 and a floatinActionButton to add items to the recyclerView to
 delete items there is a onSwipeListener in the Adapter
 ![alt text](https://github.com/wrusl/lumina/blob/master/Screenshot_20200124-151138_LUMINA.jpg)
-
-
-MainActivity/NavigationDrawer
-
-this Activity handles the navigation between the 4 Fragments
-it also contains the holder for the fragments and a drawer layout that contains the app name,
-logo and a recycler view with the devices
-![alt text](https://github.com/wrusl/lumina/blob/master/Screenshot_20200124-151202_LUMINA.jpg)
 
 
 AddAnimationsDialog
