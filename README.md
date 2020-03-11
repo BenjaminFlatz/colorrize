@@ -39,8 +39,24 @@ delete items there is a onSwipeListener in the Adapter
 ![alt text](https://static.wixstatic.com/media/263f5b_cb5fd0317181477d81a2c749b12bdf99~mv2.jpg/v1/fill/w_300,h_576,al_c,q_80,usm_0.66_1.00_0.01/Screenshot_20200130-132405_COLORRIZE_edi.webp)
 
 
-AddAnimationsDialog
+Hardware:
 
-The AddAnimDialog is for creating a new animation or edit an existing one. I'ts a function in the Fragment_3.
+LED MODUL (LED-M4)
 
-![alt text](https://github.com/wrusl/lumina/blob/master/Screenshot_20200124-151151_LUMINA.jpg)
+Das LED Modul gibt es als RGB und Tunable White modul. Wir haben mehrere Dauertests und Tests mit der               Wärmebildkamera durchgeführt um eine optimale Hitzeabfuhr zu garantieren.
+  
+![alt_text](https://static.wixstatic.com/media/263f5b_81021056fc01449295f39f3efd12b237~mv2.jpg/v1/fill/w_552,h_414,al_c,lg_2,q_80,usm_0.66_1.00_0.01/WaermeLeds.webp)
+  
+  
+STEUERMODUL (Main_2)
+
+Das Steuermodul dient zur Kommunikation zwischen der App und den LED's. Nach einmaligem Anpassen des Gleichrichters konnten wir bei diesem Modul wie hier zu sehen auch eine gute Hitzeabfuhr garantieren.
+
+![alt_text](https://static.wixstatic.com/media/263f5b_953ab2a9ba0745efaee10bb0b9eb46b8~mv2.jpg/v1/fill/w_552,h_414,al_c,lg_2,q_80,usm_0.66_1.00_0.01/WaermeMain.webp)
+
+
+GEHÄUSE (Gehäuse_1.0)
+
+Das Gehäuse wurde mit Hilfe von Johannes Juritsch erstellt. Es kann komplett bis auf die Schrauben aus dem 3D-Drucker gedruckt werden und hat einen modularen Aufbau. Der obere Teil kann abgenommen werden und entweder ein Tunable White oder RGB Modul aufgesteckt werden.
+
+![alt_text](https://static.wixstatic.com/media/263f5b_c9928f7076714084af520642d7c3c91b~mv2.jpg/v1/fill/w_432,h_576,al_c,q_80,usm_0.66_1.00_0.01/purple.webp)
