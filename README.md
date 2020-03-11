@@ -1,6 +1,6 @@
 # LUMINA
 This is my 4th class Project in my apprenticeship as electronics technician. 
-This LED control app works with an ESP8266 Module the colors are transmitted via the rgb values in the url in addition you can add mode, frequency and brightness. I've rebuilt the ESP code from https://randomnerdtver/#more-83277utorials.com/esp32-esp8266-rgb-led-strip-web-ser, you can use the original code too but only the transmission of the rgb values work because modes were implemented by me.
+This LED control app works with an ESP8266 Module the colors are transmitted via the rgb values in the url in addition you can add mode, frequency and brightness.
 
 request example: 192.168.137.122/?r255g255b255m10d10l255&
 
