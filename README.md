@@ -39,7 +39,10 @@ delete items there is a onSwipeListener in the Adapter
 ![alt text](https://static.wixstatic.com/media/263f5b_cb5fd0317181477d81a2c749b12bdf99~mv2.jpg/v1/fill/w_300,h_576,al_c,q_80,usm_0.66_1.00_0.01/Screenshot_20200130-132405_COLORRIZE_edi.webp)
 
 
-Hardware:
+
+
+
+
 
 LED MODUL (LED-M4)
 
