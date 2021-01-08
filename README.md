@@ -46,16 +46,16 @@ delete items there is a onSwipeListener in the Adapter
 
 
 
-LED MODUL (LED-M4)
+LED unit (LED-M4)
 
 <img src="https://raw.githubusercontent.com/BenjaminFlatz/lumina/master/images/WaermeLeds.jpg" width="300">
   
   
-STEUERMODUL (Main_2)
+Control unit (Main_2)
 
 <img src="https://raw.githubusercontent.com/BenjaminFlatz/lumina/master/images/WaermeMain.jpg" width="300">
 
 
-GEHÄUSE (Gehäuse_1.0)
+Case (Gehäuse_1.0)
 
 <img src="https://raw.githubusercontent.com/BenjaminFlatz/lumina/master/images/purple.jpg" width="300">
