@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimaryDark"
-        tools:context=".RGBActivity">
+        tools:context=".activities.RGBActivity">
 
 
     <!--SeekBar
@@ -119,16 +119,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <ImageView
-        android:id="@+id/iv_rgb"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rgb_color" />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/arc_menu"
         android:layout_width="411dp"
@@ -138,8 +128,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu_open="arc_left"
-        app:menu_scr="@drawable/ic_add">
+        android:menu_open="arc_left"
+        android:menu_scr="@drawable/ic_add">
 
 
         <LinearLayout

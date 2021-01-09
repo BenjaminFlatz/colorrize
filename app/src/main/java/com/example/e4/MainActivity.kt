@@ -1,14 +1,12 @@
 package com.example.e4
 
 
-import android.animation.Animator
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e4.ui.Fragment_1
@@ -20,8 +18,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.view.Window
 import android.widget.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import android.widget.ArrayAdapter
-import androidx.fragment.app.Fragment
+import com.example.e4.models.Animations
+import com.example.e4.models.Devices
 import com.example.e4.ui.Fragment_4
 
 /**

@@ -1,10 +1,7 @@
 package com.example.e4.ui
 
 import android.app.Dialog
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
 import android.webkit.WebView
@@ -12,6 +9,8 @@ import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e4.*
+import com.example.e4.adapter.AnimAdapter
+import com.example.e4.models.Animations
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.activity_anim.*
 import kotlinx.android.synthetic.main.activity_anim.rv_anim

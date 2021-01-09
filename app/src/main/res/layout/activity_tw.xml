@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    tools:context=".RGBActivity">
+    tools:context=".activities.RGBActivity">
 
     <!--com.goodiebag.protractorview.ProtractorView
         android:layout_width="match_parent"

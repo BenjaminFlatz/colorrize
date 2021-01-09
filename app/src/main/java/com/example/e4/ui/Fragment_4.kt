@@ -3,26 +3,21 @@ package com.example.e4.ui
 import android.animation.Animator
 import android.annotation.SuppressLint
 import android.app.Dialog
-import android.content.Context
 import android.content.Intent
-import android.net.wifi.WifiManager
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.e4.*
+import com.example.e4.adapter.DeviceAdapter
+import com.example.e4.models.Devices
+import com.example.e4.models.NetworkSniffTask
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.zxing.integration.android.IntentIntegrator
 import com.google.zxing.integration.android.IntentResult
 import kotlinx.android.synthetic.main.activity_device.rv_devices
-import java.net.InetAddress
-import java.io.BufferedReader
-import java.io.FileNotFoundException
-import java.io.FileReader
-import java.io.IOException
 
 
 /**
