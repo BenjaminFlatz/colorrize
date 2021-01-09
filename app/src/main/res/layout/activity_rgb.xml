@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/color_layout_rgb"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark"
-        tools:context=".activities.RGBActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/color_layout_rgb"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".activities.RGBActivity">
+
 
 
     <!--SeekBar
@@ -18,7 +19,6 @@
             android:max="255"
             android:progressTint="@android:color/holo_red_light"
             android:thumb="@drawable/wheel" />
-
     <SeekBar
             android:id="@+id/seekBar_GREEN"
             android:layout_width="fill_parent"
@@ -27,7 +27,6 @@
             android:max="255"
             android:progressTint="@android:color/holo_green_light"
             android:thumb="@drawable/wheel" />
-
     <SeekBar
             android:id="@+id/seekBar_BLUE"
             android:layout_width="fill_parent"
@@ -37,6 +36,12 @@
             android:progressTint="@android:color/holo_blue_light"
             android:thumb="@drawable/wheel" /-->
 
+
+    <ImageView
+        android:id="@+id/iv_rgb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/colorrize_icon_ohne_hg" />
 
     <WebView
         android:id="@+id/wv_rgb_0"
@@ -118,123 +123,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/arc_menu"
-        android:layout_width="411dp"
-        android:layout_height="732dp"
-        android:layout_gravity="bottom|end"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:menu_open="arc_left"
-        android:menu_scr="@drawable/ic_add">
-
-
-        <LinearLayout
-            android:id="@+id/layoutRGB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_rgb"
-                style="@style/Widget.MaterialComponents.FloatingActionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/fab_margin"
-                app:backgroundTint="@color/colorAccent"
-                app:srcCompat="@drawable/ic_rgb" />
-
-            <TextView
-                android:id="@+id/tv_rgb"
-                style="@style/TextStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="RGB" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutTW"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_tw"
-                style="@style/Widget.MaterialComponents.FloatingActionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/fab_margin"
-                app:backgroundTint="@color/colorAccent"
-                app:srcCompat="@drawable/ic_tw" />
-
-            <TextView
-                android:id="@+id/tv_tw"
-                style="@style/TextStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Tunable White" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutAnim"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_anim"
-                style="@style/Widget.MaterialComponents.FloatingActionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/fab_margin"
-                app:backgroundTint="@color/colorAccent"
-                app:srcCompat="@drawable/ic_play_big" />
-
-            <TextView
-                android:id="@+id/tv_anim"
-                style="@style/TextStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Animation" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/layoutMenu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/layoutTW"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab_menu"
-                style="@style/Widget.MaterialComponents.FloatingActionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/fab_margin"
-                app:srcCompat="@drawable/ic_home" />
-        </LinearLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
         android:id="@+id/fabLayout_3"
@@ -358,7 +246,6 @@
         android:max="1000"
         android:progress="1000"
         android:progressTint="@color/colorAccent"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

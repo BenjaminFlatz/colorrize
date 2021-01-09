@@ -36,19 +36,8 @@ class Fragment_4 : Fragment() {
     private val ADD_TASK_REQUEST = 1
 
     var recyclerView: RecyclerView? = null
-/*
-    val fabLayout = null
-    val fabLayout_1 = null
-    val fabLayout_2 = null
 
 
-    val fab = null
-    val fab1 = null
-    val fab2 = null
-
-    val tvFab1 = null
-    val tvFab2 = null
-*/
     var isFabOpen = false
 
 

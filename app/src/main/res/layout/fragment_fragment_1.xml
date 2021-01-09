@@ -129,7 +129,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:palette="@drawable/palette"
+        app:palette="@drawable/colorrize_icon_ohne_hg"
         app:selector="@drawable/wheel" />
 
     <SeekBar

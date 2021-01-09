@@ -26,7 +26,7 @@ class DeviceActivity : AppCompatActivity() {
     var isFabRightOpen = false
     var isFabLeftOpen = false
 
-    override fun onCreate(savedInstanceState: Bundle?) {2
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_device)
 
