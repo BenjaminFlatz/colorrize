@@ -1,4 +1,4 @@
-# LUMINA
+# COLORRIZE
 
 This is my exam project at the lbsfe1 in my apprenticeship as electronics technician. I built it to learn basic app development in Kotlin and connect this with my knowledge in electronics. Because I had no experience in app development this project was a learning experience for me and was not built for commercial use.
 
