@@ -1,4 +1,4 @@
-package com.example.e4.adapter
+package com.example.colorrize.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,13 +7,11 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.e4.R
-import com.example.e4.models.SwipeModel
+import com.example.colorrize.R
+import com.example.colorrize.models.SwipeModel
 import java.util.ArrayList
 
-/**
- * Created by Parsania Hardik on 03-Jan-17.
- */
+
 class SwipeAdapter(private val context: Context, private val ModelArrayList: ArrayList<SwipeModel>) : BaseAdapter() {
 
     fun remove(position: Int) {
@@ -48,8 +46,7 @@ class SwipeAdapter(private val context: Context, private val ModelArrayList: Arr
 
         if (convertView == null) {
             holder = ViewHolder()
-            val inflater = context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+            val inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
             convertView = inflater.inflate(R.layout.remove_list_item, null, true)
 
             holder.tvname = convertView!!.findViewById(R.id.tv) as TextView
@@ -61,7 +58,7 @@ class SwipeAdapter(private val context: Context, private val ModelArrayList: Arr
             holder = convertView.tag as ViewHolder
         }
 
-        holder.tvname!!.setText(ModelArrayList[position].getNames())
+        holder.tvname!!.text = ModelArrayList[position].getNames()
         holder.iv!!.setImageResource(ModelArrayList[position].getImage_drawables())
 
         return convertView

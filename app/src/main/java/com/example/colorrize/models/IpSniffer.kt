@@ -1,6 +1,5 @@
-package com.example.e4.models
+package com.example.colorrize.models
 
-import com.example.e4.models.Devices
 import java.io.IOException
 import java.net.InetAddress
 

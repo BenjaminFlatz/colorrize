@@ -1,9 +1,8 @@
-package com.example.e4.adapter
+package com.example.colorrize.adapter
 
 import android.app.Dialog
 import android.content.Context
 import android.view.*
-import android.webkit.WebView
 import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
@@ -11,13 +10,13 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.anim_item.view.*
 import androidx.lifecycle.ViewModel
 import android.os.Vibrator
-import com.example.e4.models.Animations
-import com.example.e4.models.Devices
-import com.example.e4.R
+import com.example.colorrize.models.Animations
+import com.example.colorrize.models.Devices
+import com.example.colorrize.R
 
 
 @Suppress("DEPRECATION")
-class AnimAdapter(val context: Context, var wvAnim: MutableList<WebView>)  : RecyclerView.Adapter<AnimAdapter.ViewHolder>() {
+class AnimAdapter(val context: Context)  : RecyclerView.Adapter<AnimAdapter.ViewHolder>() {
     var mSelectedItem = -1
     var r = 0
     var g = 0
@@ -120,8 +119,8 @@ class AnimAdapter(val context: Context, var wvAnim: MutableList<WebView>)  : Rec
         for (i in Devices.deviceIP.indices) {
             if (Devices.switch[i]){
                 var url = "http://${Devices.deviceIP[i]}/?r${r}g${g}b${b}m${mode}f${frequency}b${brightness}&"
-                wvAnim[i].settings.javaScriptEnabled = true
-                wvAnim[i].loadUrl(url)
+                //wvAnim[i].settings.javaScriptEnabled = true
+                //wvAnim[i].loadUrl(url)
                 //Toast.makeText(this@RGBActivity, "${Devices.deviceIP[i]}", Toast.LENGTH_SHORT).show()
             }
 

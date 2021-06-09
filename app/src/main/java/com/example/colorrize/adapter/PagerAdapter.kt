@@ -1,12 +1,12 @@
-package com.example.e4.adapter
+package com.example.colorrize.adapter
 
 import android.app.Activity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.example.e4.ui.Fragment_1
-import com.example.e4.ui.Fragment_2
-import com.example.e4.ui.Fragment_3
+import com.example.colorrize.ui.Fragment_1
+import com.example.colorrize.ui.Fragment_2
+import com.example.colorrize.ui.Fragment_3
 
 class PagerAdapter(
     fm: Activity,

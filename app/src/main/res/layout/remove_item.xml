@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:hint="delete?"
+        android:hint="delete"
         android:inputType="textPersonName"
         android:cursorVisible="true"
         android:textCursorDrawable="@null"/>

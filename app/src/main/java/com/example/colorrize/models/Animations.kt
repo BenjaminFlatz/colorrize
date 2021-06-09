@@ -1,4 +1,4 @@
-package com.example.e4.models
+package com.example.colorrize.models
 
 import android.annotation.SuppressLint
 
@@ -77,65 +77,7 @@ object Animations{
 
 
     }
-    /*fun run(){
-        when (mode) {
-            "sine" -> {
-                when (ledMode) {
-                    "RGB" -> {
 
-
-                    }
-                    "TW" -> {
-
-
-                    }
-                    else -> {
-
-                    }
-                }
-            }
-            "rect" -> {
-                when (ledMode) {
-                    "RGB" -> {
-
-
-                    }
-                    "TW" -> {
-
-
-                    }
-                    else -> {
-
-                    }
-                }
-
-            }
-            "tri" -> {
-                when (ledMode) {
-                    "RGB" -> {
-
-
-                    }
-                    "TW" -> {
-
-
-                    }
-                    else -> {
-
-                    }
-                }
-
-
-            }
-            else -> {
-
-
-            }
-        }
-
-
-
-    }*/
 
 
 }

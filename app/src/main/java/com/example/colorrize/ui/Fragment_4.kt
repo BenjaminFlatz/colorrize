@@ -1,36 +1,23 @@
-package com.example.e4.ui
+package com.example.colorrize.ui
 
 import android.animation.Animator
 import android.annotation.SuppressLint
 import android.app.Dialog
-import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.e4.*
-import com.example.e4.adapter.DeviceAdapter
-import com.example.e4.models.Devices
-import com.example.e4.models.NetworkSniffTask
+import com.example.colorrize.*
+import com.example.colorrize.adapter.DeviceAdapter
+import com.example.colorrize.models.Devices
+import com.example.colorrize.models.NetworkSniffTask
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.zxing.integration.android.IntentIntegrator
-import com.google.zxing.integration.android.IntentResult
-import kotlinx.android.synthetic.main.activity_device.rv_devices
+import kotlinx.android.synthetic.main.fragment_fragment_4.*
 
 
-/**
- * this is the device Fragment it contains a recyclerView
- * and a floatingActionButton to add items to the recyclerView
- * to delete items there's a onLongClickListener in the fragments Adapter
- * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
- * [Fragment_4.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [Fragment_4.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class Fragment_4 : Fragment() {
     private lateinit var linearLayoutManager: LinearLayoutManager
     private val ADD_TASK_REQUEST = 1
@@ -51,16 +38,15 @@ class Fragment_4 : Fragment() {
         val fabLayout = v.findViewById<LinearLayout>(R.id.fabLayout)
         val fabLayout_1 = v.findViewById<LinearLayout>(R.id.fabLayout_1)
         val fabLayout_2 = v.findViewById<LinearLayout>(R.id.fabLayout_2)
-        val fabLayout_3 = v.findViewById<LinearLayout>(R.id.fabLayout_3)
 
         val fabDevice = v.findViewById<FloatingActionButton>(R.id.fab_device)
         val fab1 = v.findViewById<FloatingActionButton>(R.id.fab_1)
         val fab2 = v.findViewById<FloatingActionButton>(R.id.fab_2)
-        val fab3 = v.findViewById<FloatingActionButton>(R.id.fab_3)
 
         val tvFab1 = v.findViewById<TextView>(R.id.tv_fab1)
         val tvFab2 = v.findViewById<TextView>(R.id.tv_fab2)
-        val tvFab3 = v.findViewById<TextView>(R.id.tv_fab3)
+
+
 
         tvFab1.visibility = View.GONE
         tvFab2.visibility = View.GONE
@@ -69,14 +55,7 @@ class Fragment_4 : Fragment() {
         fab3.setOnClickListener {
             val sniffer = NetworkSniffTask()
             sniffer.getAddress()
-
-            //Devices.addData(ips[0], out, "RGB", false)
-
             recyclerView?.adapter?.notifyDataSetChanged()
-            //run {
-            //  IntentIntegrator(context as Activity?).initiateScan()
-            //}
-
         }
         fab2.setOnClickListener {
             val sniffer = NetworkSniffTask()
@@ -148,10 +127,9 @@ class Fragment_4 : Fragment() {
         }
         return v
     }
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
 
-        var result: IntentResult? =
-            IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+        var result: IntentResult? = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
 
         if (result != null) {
 
@@ -166,7 +144,7 @@ class Fragment_4 : Fragment() {
         } else {
             super.onActivityResult(requestCode, resultCode, data)
         }
-    }
+    }*/
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)

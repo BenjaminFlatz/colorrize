@@ -1,4 +1,4 @@
-package com.example.e4
+package com.example.colorrize
 
 import org.junit.Test
 

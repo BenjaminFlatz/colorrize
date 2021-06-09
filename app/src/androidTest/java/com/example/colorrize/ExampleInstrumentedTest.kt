@@ -1,4 +1,4 @@
-package com.example.e4
+package com.example.colorrize
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

@@ -1,26 +1,21 @@
-package com.example.e4
+package com.example.colorrize
 
 
 import android.annotation.SuppressLint
-import android.app.Dialog
-import android.content.Intent
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.e4.ui.Fragment_1
-import com.example.e4.ui.Fragment_2
-import com.example.e4.ui.Fragment_3
-import com.google.zxing.integration.android.IntentIntegrator
-import com.google.zxing.integration.android.IntentResult
+import com.example.colorrize.ui.Fragment_1
+import com.example.colorrize.ui.Fragment_2
+import com.example.colorrize.ui.Fragment_3
 import kotlinx.android.synthetic.main.activity_main.*
-import android.view.Window
 import android.widget.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.example.e4.models.Animations
-import com.example.e4.models.Devices
-import com.example.e4.ui.Fragment_4
+import com.example.colorrize.models.Animations
+import com.example.colorrize.models.Devices
+import com.example.colorrize.ui.Fragment_4
 
 /**
  * this Activity handles the navigation between the 4 Fragments
@@ -79,12 +74,11 @@ class MainActivity() : AppCompatActivity(), Parcelable {
         Devices.addNames()
         Animations.add_arguments()
 
-        supportFragmentManager.beginTransaction()
-            .add(R.id.frame_container, Fragment_1()).commit()
+        supportFragmentManager.beginTransaction().add(R.id.frame_container, Fragment_1()).commit()
         bottom_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
 
-        }
+    }
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeByte(if (isFabRightOpen) 1 else 0)
         parcel.writeByte(if (isFabLeftOpen) 1 else 0)

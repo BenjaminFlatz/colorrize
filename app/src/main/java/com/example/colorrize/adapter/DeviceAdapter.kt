@@ -1,4 +1,4 @@
-package com.example.e4.adapter
+package com.example.colorrize.adapter
 
 import android.app.Dialog
 import android.content.Context
@@ -6,9 +6,8 @@ import android.os.Vibrator
 import android.view.*
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
-import com.example.e4.models.Devices
-import com.example.e4.R
-import com.example.e4.activities.DeviceActivity
+import com.example.colorrize.models.Devices
+import com.example.colorrize.R
 import kotlinx.android.synthetic.main.device_item.view.*
 
 
@@ -16,7 +15,7 @@ import kotlinx.android.synthetic.main.device_item.view.*
 class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.ViewHolder>() {
 
 
-    var onItemClick: ((DeviceActivity) -> Unit)? = null
+    //var onItemClick: ((DeviceActivity) -> Unit)? = null
 
 
     override fun getItemCount(): Int {

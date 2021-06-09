@@ -1,37 +1,20 @@
-package com.example.e4.ui
+package com.example.colorrize.ui
 
 import android.app.Dialog
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import android.webkit.WebView
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.e4.*
-import com.example.e4.adapter.AnimAdapter
-import com.example.e4.models.Animations
+import com.example.colorrize.*
+import com.example.colorrize.adapter.AnimAdapter
+import com.example.colorrize.models.Animations
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.android.synthetic.main.activity_anim.*
-import kotlinx.android.synthetic.main.activity_anim.rv_anim
-import kotlinx.android.synthetic.main.activity_device.*
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_fragment_3.*
 
 
-/**
- * this is the Animations Fragment it contains a recyclerView
- * and a floatinActionButton to add items to the recyclerView to
- * delete items there is a onLongClickListener in the Adapter
- * A simple [Fragment] subclass.
- * Activities that contain this fragment must implement the
- * [Fragment_3.OnFragmentInteractionListener] interface
- * to handle interaction events.
- * Use the [Fragment_3.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Fragment_3 : Fragment() {
-    var wvAnim: MutableList<WebView> = arrayListOf()
     var recyclerView: RecyclerView? = null
 
     override fun onCreateView(
@@ -39,19 +22,8 @@ class Fragment_3 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val v = inflater.inflate(R.layout.fragment_fragment_3, container, false)
-        wvAnim.add(v.findViewById(R.id.wv_anim_0))
-        wvAnim.add(v.findViewById(R.id.wv_anim_1))
-        wvAnim.add(v.findViewById(R.id.wv_anim_2))
-        wvAnim.add(v.findViewById(R.id.wv_anim_3))
-        wvAnim.add(v.findViewById(R.id.wv_anim_4))
-        wvAnim.add(v.findViewById(R.id.wv_anim_5))
-        wvAnim.add(v.findViewById(R.id.wv_anim_6))
-        wvAnim.add(v.findViewById(R.id.wv_anim_7))
-        wvAnim.add(v.findViewById(R.id.wv_anim_8))
-        wvAnim.add(v.findViewById(R.id.wv_anim_9))
 
         val fabAddAnim = v.findViewById<FloatingActionButton>(R.id.fab_add_anim)
-
         fabAddAnim.setOnClickListener(){
 
             showAddDialog()
@@ -67,9 +39,10 @@ class Fragment_3 : Fragment() {
         //val recyclerView = rv_anim
         //recyclerView.layoutManager = LinearLayoutManager(context)
         //recyclerView.adapter = context?.let { AnimAdapter(it,this.wvAnim) }
+
         recyclerView = rv_anim
         recyclerView?.layoutManager = LinearLayoutManager(context)
-        recyclerView?.adapter = context?.let { AnimAdapter(it, this.wvAnim) }
+        recyclerView?.adapter = context?.let { AnimAdapter(it) }
 
 
 

@@ -1,4 +1,11 @@
-package com.example.e4.models
+package com.example.colorrize.models
+
+import android.content.Context.MODE_PRIVATE
+
+import android.content.SharedPreferences
+
+
+
 
 
 object Devices {

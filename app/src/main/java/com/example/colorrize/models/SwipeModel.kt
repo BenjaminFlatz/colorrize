@@ -1,4 +1,4 @@
-package com.example.e4.models
+package com.example.colorrize.models
 
 class SwipeModel {
 

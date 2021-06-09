@@ -1,24 +1,20 @@
-package com.example.e4.ui
+package com.example.colorrize.ui
 
+import android.graphics.Bitmap
 import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.graphics.Bitmap
-import kotlinx.android.synthetic.main.activity_main.*
-import android.webkit.WebView
 import android.widget.SeekBar
-import com.example.e4.models.Devices
-import com.example.e4.R
+import androidx.fragment.app.Fragment
+import com.example.colorrize.R
+import com.example.colorrize.models.Connection
+import com.example.colorrize.models.Devices
 import com.skydoves.colorpickerview.ColorPickerView
-
-
 import com.skydoves.colorpickerview.listeners.ColorListener
-
-
-
+import kotlinx.android.synthetic.main.activity_main.*
+import com.example.colorrize.models.Connection.*
 
 
 
@@ -39,6 +35,8 @@ class Fragment_1 : Fragment() {
     var g = 0
     var b = 0
     var m = 0
+    var conn = Connection()
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,34 +55,14 @@ class Fragment_1 : Fragment() {
         //v.findViewById<ImageView>(R.id.iv_rgb).isDrawingCacheEnabled = true
         //v.findViewById<ImageView>(R.id.iv_rgb).buildDrawingCache(true)
 
-        var url = ""
-        var wvRGB: MutableList<WebView> = arrayListOf()
-        wvRGB.add(v.findViewById(R.id.wv_rgb_0))
-        wvRGB.add(v.findViewById(R.id.wv_rgb_1))
-        wvRGB.add(v.findViewById(R.id.wv_rgb_2))
-        wvRGB.add(v.findViewById(R.id.wv_rgb_3))
-        wvRGB.add(v.findViewById(R.id.wv_rgb_4))
-        wvRGB.add(v.findViewById(R.id.wv_rgb_5))
-        wvRGB.add(v.findViewById(R.id.wv_rgb_6))
-        wvRGB.add(v.findViewById(R.id.wv_rgb_7))
-        wvRGB.add(v.findViewById(R.id.wv_rgb_8))
-        wvRGB.add(v.findViewById(R.id.wv_rgb_9))
 
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
-                brightness = seekBar.progress
-
-                r = (Color.red(colorPickerView.color)*brightness)/255
-                g = (Color.green(colorPickerView.color)*brightness)/255
-                b = (Color.blue(colorPickerView.color)*brightness)/255
 
                 for (i in Devices.deviceIP.indices) {
                     if (Devices.switch[i]){
-                        url = "http://${Devices.deviceIP[i]}/?r${r}g${g}b${b}&"
-                        wvRGB[i].settings.javaScriptEnabled = true
-                        wvRGB[i].loadUrl(url)
-                        //Toast.makeText(this@TWActivity, "$i", Toast.LENGTH_SHORT).show()
-
+                        conn.post_color(colorPickerView.color, i)
+                  
                     }
 
                 }
@@ -101,6 +79,7 @@ class Fragment_1 : Fragment() {
         })
 
         colorPickerView.setColorListener(ColorListener { color, _ ->
+            
             brightness = seekBar.progress
 
             r = (Color.red(color)*brightness)/1000
@@ -109,15 +88,9 @@ class Fragment_1 : Fragment() {
 
             val hex = "#" + Integer.toHexString(color)
 
-
-
-
             for (i in Devices.deviceIP.indices) {
                 if (Devices.switch[i]){
-                    url = "http://${Devices.deviceIP[i]}/?r${r}g${g}b${b}m$m&"
-                    wvRGB[i].settings.javaScriptEnabled = true
-                    wvRGB[i].loadUrl(url)
-                    //Toast.makeText(this@RGBActivity, "${Devices.deviceIP[i]}", Toast.LENGTH_SHORT).show()
+                    conn.post_color(color, i)
                 }
 
 
@@ -161,6 +134,7 @@ class Fragment_1 : Fragment() {
 
         return v
     }
+
 
 }
 
