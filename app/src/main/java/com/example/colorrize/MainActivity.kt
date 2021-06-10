@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
+import android.util.JsonWriter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.colorrize.ui.Fragment_1
@@ -14,7 +15,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.colorrize.models.Animations
-import com.example.colorrize.models.Devices
+import com.example.colorrize.models.Data
 import com.example.colorrize.ui.Fragment_4
 
 /**
@@ -28,6 +29,8 @@ class MainActivity() : AppCompatActivity(), Parcelable {
     private val ADD_TASK_REQUEST = 1
     var isFabRightOpen = false
     var isFabLeftOpen = false
+
+
 
     //val fm = supportFragmentManager
     //val fragmentTransaction = fm.beginTransaction()
@@ -71,11 +74,19 @@ class MainActivity() : AppCompatActivity(), Parcelable {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Devices.addNames()
+        //Devices.addNames()
         Animations.add_arguments()
 
         supportFragmentManager.beginTransaction().add(R.id.frame_container, Fragment_1()).commit()
         bottom_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        Data.readDevices("devices.json")
+
+    }
+
+    override fun onDestroy() {
+
+        super.onDestroy()
+        Data.writeDevices("devices.json")
 
 
     }

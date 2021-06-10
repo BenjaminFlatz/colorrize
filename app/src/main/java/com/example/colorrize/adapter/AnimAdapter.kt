@@ -2,6 +2,7 @@ package com.example.colorrize.adapter
 
 import android.app.Dialog
 import android.content.Context
+import android.graphics.Color
 import android.view.*
 import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -11,8 +12,9 @@ import kotlinx.android.synthetic.main.anim_item.view.*
 import androidx.lifecycle.ViewModel
 import android.os.Vibrator
 import com.example.colorrize.models.Animations
-import com.example.colorrize.models.Devices
 import com.example.colorrize.R
+import com.example.colorrize.models.Connection
+import com.example.colorrize.models.Data
 
 
 @Suppress("DEPRECATION")
@@ -45,7 +47,7 @@ class AnimAdapter(val context: Context)  : RecyclerView.Adapter<AnimAdapter.View
 
             Animations.switch[position] = holder.swAnimPlay.isChecked
             //Devices.deviceName[position] = holder.tvDeviceName.text as String
-            //Devices.deviceIP[position] = holder.tvDeviceIP.text as String
+            //Data.devices.ip[position] = holder.tvDeviceIP.text as String
 
         }
         when {
@@ -116,12 +118,13 @@ class AnimAdapter(val context: Context)  : RecyclerView.Adapter<AnimAdapter.View
 
 
     fun controlLeds(mode: Int, frequency: Int, brightness: Int){
-        for (i in Devices.deviceIP.indices) {
-            if (Devices.switch[i]){
-                var url = "http://${Devices.deviceIP[i]}/?r${r}g${g}b${b}m${mode}f${frequency}b${brightness}&"
+        for (i in Data.devices.indices) {
+            if (Data.devices[i].state){
+                var color = Color.rgb(r,g,b)
+                Connection.post_color(color = color, i)
                 //wvAnim[i].settings.javaScriptEnabled = true
                 //wvAnim[i].loadUrl(url)
-                //Toast.makeText(this@RGBActivity, "${Devices.deviceIP[i]}", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this@RGBActivity, "${Data.devices.ip[i]}", Toast.LENGTH_SHORT).show()
             }
 
         }

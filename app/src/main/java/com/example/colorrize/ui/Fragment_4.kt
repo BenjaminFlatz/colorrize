@@ -1,6 +1,5 @@
 package com.example.colorrize.ui
 
-import android.animation.Animator
 import android.annotation.SuppressLint
 import android.app.Dialog
 import android.os.Bundle
@@ -11,8 +10,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.colorrize.*
 import com.example.colorrize.adapter.DeviceAdapter
-import com.example.colorrize.models.Devices
-import com.example.colorrize.models.NetworkSniffTask
+import com.example.colorrize.models.Data
+import com.example.colorrize.models.Device
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_fragment_4.*
 
@@ -23,7 +22,6 @@ class Fragment_4 : Fragment() {
     private val ADD_TASK_REQUEST = 1
 
     var recyclerView: RecyclerView? = null
-
 
     var isFabOpen = false
 
@@ -50,24 +48,10 @@ class Fragment_4 : Fragment() {
 
         tvFab1.visibility = View.GONE
         tvFab2.visibility = View.GONE
-        tvFab3.visibility = View.GONE
 
-        fab3.setOnClickListener {
-            val sniffer = NetworkSniffTask()
-            sniffer.getAddress()
-            recyclerView?.adapter?.notifyDataSetChanged()
-        }
+
         fab2.setOnClickListener {
-            val sniffer = NetworkSniffTask()
-            context?.let { it1 -> sniffer.NetworkSniffTask(it1) }
-            sniffer.execute()
-
-            //Devices.addData(ips[0], out, "RGB", false)
-
-            recyclerView?.adapter?.notifyDataSetChanged()
-            //run {
-            //  IntentIntegrator(context as Activity?).initiateScan()
-            //}
+            Toast.makeText(context, ":D", Toast.LENGTH_SHORT).show()
 
         }
 
@@ -81,70 +65,26 @@ class Fragment_4 : Fragment() {
                 isFabOpen = true
                 tvFab1.visibility = View.VISIBLE
                 tvFab2.visibility = View.VISIBLE
-                tvFab3.visibility = View.VISIBLE
                 fabLayout_1?.visibility = View.VISIBLE
                 fabLayout_2?.visibility = View.VISIBLE
-                fabLayout_3?.visibility = View.VISIBLE
                 fabLayout?.visibility = View.VISIBLE
                 fabDevice?.animate()?.rotationBy(180F)
                 fabLayout_1?.animate()?.translationY(-resources.getDimension(R.dimen.standard_55))
                 fabLayout_2?.animate()?.translationY(-resources.getDimension(R.dimen.standard_105))
-                fabLayout_3?.animate()?.translationY(-resources.getDimension(R.dimen.standard_155))
 
             } else {
                 isFabOpen = false
                 tvFab1.visibility = View.GONE
                 tvFab2.visibility = View.GONE
-                tvFab3.visibility = View.GONE
                 fabDevice?.animate()?.rotation(0F)
                 fabLayout_1?.animate()?.translationY(0F)
                 fabLayout_2?.animate()?.translationY(0F)
-                fabLayout_3?.animate()?.translationY(0F)?.setListener(object : Animator.AnimatorListener {
-                    override fun onAnimationStart(animator: Animator) {
 
-                    }
-
-                    override fun onAnimationEnd(animator: Animator) {
-                        if (!isFabOpen) {
-                            fabLayout_1?.visibility = View.GONE
-                            fabLayout_2.visibility = View.GONE
-                            fabLayout_3.visibility = View.GONE
-                        }
-                        /*                if (fab.getRotation() != -180) {
-                                            fab.setRotation(-180);
-                                        }*/
-                    }
-
-                    override fun onAnimationCancel(animator: Animator) {
-
-                    }
-
-                    override fun onAnimationRepeat(animator: Animator) {
-
-                    }
-                })
+                }
             }
-        }
         return v
-    }
-    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-
-        var result: IntentResult? = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
-
-        if (result != null) {
-
-            if (result.contents != null) {
-                Toast.makeText(context, "${result.contents}", Toast.LENGTH_SHORT)
-                    .show()
-                //Devices.addData()
-
-            } else {
-                Toast.makeText(context, "scan failed", Toast.LENGTH_SHORT).show()
-            }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data)
         }
-    }*/
+
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -198,7 +138,10 @@ class Fragment_4 : Fragment() {
         addBtn.setOnClickListener {
             //dialog.dismiss()
             if (dialogName.text.toString() != "" && dialogIp.text.toString() != "" && mode != ""){
-                Devices.addData(dialogName.text.toString(), dialogIp.text.toString(), mode, false)
+
+                var device = Device(name = dialogName.text.toString(), ip = dialogIp.text.toString(), mode = mode, state = false)
+                Data.devices.add(device)
+
                 recyclerView?.adapter?.notifyDataSetChanged()
 
 

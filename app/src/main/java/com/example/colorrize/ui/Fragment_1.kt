@@ -10,12 +10,10 @@ import android.widget.SeekBar
 import androidx.fragment.app.Fragment
 import com.example.colorrize.R
 import com.example.colorrize.models.Connection
-import com.example.colorrize.models.Devices
 import com.skydoves.colorpickerview.ColorPickerView
 import com.skydoves.colorpickerview.listeners.ColorListener
 import kotlinx.android.synthetic.main.activity_main.*
-import com.example.colorrize.models.Connection.*
-
+import com.example.colorrize.models.Data
 
 
 /**
@@ -35,7 +33,6 @@ class Fragment_1 : Fragment() {
     var g = 0
     var b = 0
     var m = 0
-    var conn = Connection()
 
 
 
@@ -59,9 +56,9 @@ class Fragment_1 : Fragment() {
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
 
-                for (i in Devices.deviceIP.indices) {
-                    if (Devices.switch[i]){
-                        conn.post_color(colorPickerView.color, i)
+                for (i in Data.devices.indices) {
+                    if (Data.devices[i].state){
+                        Connection.post_color(colorPickerView.color, i)
                   
                     }
 
@@ -88,9 +85,9 @@ class Fragment_1 : Fragment() {
 
             val hex = "#" + Integer.toHexString(color)
 
-            for (i in Devices.deviceIP.indices) {
-                if (Devices.switch[i]){
-                    conn.post_color(color, i)
+            for (i in Data.devices.indices) {
+                if (Data.devices[i].state){
+                    Connection.post_color(color, i)
                 }
 
 

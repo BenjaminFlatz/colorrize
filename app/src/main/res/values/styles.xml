@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="textColor">@color/textColor</item>
         <item name="textAppearanceButton">@style/AppTextAppearance.Button</item>
     </style>
     <style name="AppTextAppearance.Button" parent="TextAppearance.MaterialComponents.Button">

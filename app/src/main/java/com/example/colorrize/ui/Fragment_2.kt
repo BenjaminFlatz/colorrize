@@ -7,10 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
-
-import com.example.colorrize.models.Devices
 import com.example.colorrize.R
 import com.example.colorrize.models.Connection
+import com.example.colorrize.models.Data
 
 
 import com.goodiebag.protractorview.ProtractorView
@@ -26,8 +25,6 @@ class Fragment_2 : Fragment() {
     var g = 0
     var b = 0
     var m = 0
-
-    val conn = Connection()
 
 
     override fun onCreateView(
@@ -47,9 +44,9 @@ class Fragment_2 : Fragment() {
                 b = ((progressReal)*brightness)/255
                 var color = Color.rgb(r,g,b)
 
-                for (i in Devices.deviceIP.indices) {
-                    if (Devices.switch[i]){
-                        conn.post_color(color, i)
+                for (i in Data.devices.indices) {
+                    if (Data.devices[i].state){
+                        Connection.post_color(color, i)
 
                     }
 
@@ -81,9 +78,9 @@ class Fragment_2 : Fragment() {
                     tv_color_tw.text = "$colorTemp K"
                     var color = Color.rgb(r,g,b)
 
-                    for (i in Devices.deviceIP.indices) {
-                        if (Devices.switch[i]){
-                            conn.post_color(color, i)
+                    for (i in Data.devices.indices) {
+                        if (Data.devices[i].state){
+                            Connection.post_color(color, i)
                             //Toast.makeText(this@TWActivity, "$i", Toast.LENGTH_SHORT).show()
 
                         }
