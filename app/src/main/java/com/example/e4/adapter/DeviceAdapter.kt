@@ -86,6 +86,9 @@ class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.
         holder.switchDevice.setOnClickListener {
 
             Data.devices[position].state = holder.switchDevice.isChecked
+            Data.writeDevices(context, "devices.json")
+
+
             //Data.devices[position].name = holder.tvDeviceName.text as String
             //Data.devices[position].ip = holder.tvDeviceIP.text as String
 
@@ -193,6 +196,7 @@ class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.
                 var device = Device(dialogName.text.toString(), dialogIp.text.toString(), mode!!, false)
                 Data.devices.removeAt(position)
                 Data.devices.add(position, device)
+                Data.writeDevices(context, "devices.json")
                 notifyDataSetChanged()
             }
             else{
@@ -230,6 +234,7 @@ class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.
         yesBtn.setOnClickListener {
 
             Data.devices.removeAt(position)
+            Data.writeDevices(context, "devices.json")
             notifyDataSetChanged()
             dialog.cancel()
 

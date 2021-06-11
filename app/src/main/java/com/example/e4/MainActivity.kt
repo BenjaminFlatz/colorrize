@@ -46,13 +46,14 @@ class MainActivity() : AppCompatActivity(), Parcelable {
                         .replace(R.id.frame_container, Fragment_2()).commit()
                     return@OnNavigationItemSelectedListener true
                 }
+                /*
                 R.id.navigation_3 -> {
                     /*val intent = Intent(this@MainActivity, AnimActivity::class.java)
                     startActivity(intent)*/
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame_container, Fragment_3()).commit()
                     return@OnNavigationItemSelectedListener true
-                }
+                }*/
                 R.id.navigation_4 -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame_container, Fragment_4()).commit()
@@ -81,13 +82,7 @@ class MainActivity() : AppCompatActivity(), Parcelable {
 
     }
 
-    override fun onDestroy() {
 
-        super.onDestroy()
-        Data.readDevices(this.applicationContext, "devices.json")
-
-
-    }
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeByte(if (isFabRightOpen) 1 else 0)
         parcel.writeByte(if (isFabLeftOpen) 1 else 0)

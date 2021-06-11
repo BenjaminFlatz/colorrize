@@ -11,20 +11,8 @@ import java.nio.file.Paths
 object Data {
 
     var devices: MutableList<Device> = arrayListOf()
+    var animations: MutableList<Animation> = arrayListOf()
     private var gson = Gson()
-
-
-    fun checkDir(filename: String): File {
-        val path = Paths.get("").toAbsolutePath().toString()
-        val dir = File("$path${File.separator}colorrize${File.separator}")
-        if (!dir.exists()){
-            dir.mkdirs()
-
-        }
-
-        return File("$path$filename");
-
-    }
 
     fun checkFile(context: Context?, filename: String): File {
         val file: File = File(context?.filesDir, filename)
@@ -49,8 +37,6 @@ object Data {
 
         }
 
-
-
     }
 
     fun writeDevices(context: Context?, filename: String){
@@ -59,6 +45,24 @@ object Data {
         file.writeText(jsonString)
         println("writeDevices${jsonString}")
     }
+    fun readAnimations(context: Context?, filename: String){
+        val file = this.checkFile(context, filename)
+        val bufferedReader: BufferedReader = file.bufferedReader()
+        val inputString = bufferedReader.use { it.readText() }
+        val listType: Type = object : TypeToken<MutableList<Animation?>?>() {}.type
+        if (inputString != ""){
+            this.animations = this.gson.fromJson(inputString, listType)
+            println("readAnimations${this.animations}")
 
+        }
+
+    }
+
+    fun writeAnimations(context: Context?, filename: String){
+        val jsonString:String = this.gson.toJson(this.animations)
+        val file = checkFile(context, filename)
+        file.writeText(jsonString)
+        println("writeAnimations${jsonString}")
+    }
 
 }

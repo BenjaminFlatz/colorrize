@@ -141,10 +141,11 @@ class Fragment_4 : Fragment() {
 
                 var device = Device(name = dialogName.text.toString(), ip = dialogIp.text.toString(), mode = mode, state = false)
                 Data.devices.add(device)
+                Data.writeDevices(context, "devices.json")
 
                 recyclerView?.adapter?.notifyDataSetChanged()
                 println("Fragment_4${Data.devices}")
-                Data.writeDevices(context, "devices.json")
+
 
             }
             else{
