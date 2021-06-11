@@ -6,21 +6,20 @@ import android.os.Vibrator
 import android.view.*
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
-import com.example.e4.models.Devices
 import com.example.e4.R
-import com.example.e4.activities.DeviceActivity
+import com.example.e4.models.Data
+import com.example.e4.models.Device
 import kotlinx.android.synthetic.main.device_item.view.*
 
 
-@Suppress("DEPRECATION")
 class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.ViewHolder>() {
 
 
-    var onItemClick: ((DeviceActivity) -> Unit)? = null
+    //var onItemClick: ((DeviceActivity) -> Unit)? = null
 
 
     override fun getItemCount(): Int {
-        return Devices.deviceName.size
+        return Data.devices.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -51,20 +50,26 @@ class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.
         }*/
 
 
+        println("DeviceAdapter${Data.devices[position].javaClass}")
 
-        if (Devices.mode[position] == "RGB"){
-            holder.ivDevice.setBackgroundResource(R.drawable.ic_rgb)
+        when (Data.devices[position].mode) {
+            "RGB" -> {
+                holder.ivDevice.setBackgroundResource(R.drawable.ic_rgb)
 
+            }
+            "TW" -> {
+                holder.ivDevice.setBackgroundResource(R.drawable.ic_tw)
+
+            }
+            else -> {
+                println("DeviceAdapter${Data.devices[position].mode}")
+            }
         }
-        else if (Devices.mode[position] == "TW"){
-            holder.ivDevice.setBackgroundResource(R.drawable.ic_tw)
-
-        }
 
 
-        holder.tvDeviceName.text = Devices.deviceName[position]
-        holder.tvDeviceIP.text = Devices.deviceIP[position]
-        holder.switchDevice.isChecked = Devices.switch[position]
+        holder.tvDeviceName.text = Data.devices[position].name
+        holder.tvDeviceIP.text = Data.devices[position].ip
+        holder.switchDevice.isChecked = Data.devices[position].state!!
 
         holder.layoutDevice.setOnClickListener(){
 
@@ -80,13 +85,16 @@ class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.
 
         holder.switchDevice.setOnClickListener {
 
-            Devices.switch[position] = holder.switchDevice.isChecked
-            //Devices.deviceName[position] = holder.tvDeviceName.text as String
-            //Devices.deviceIP[position] = holder.tvDeviceIP.text as String
+            Data.devices[position].state = holder.switchDevice.isChecked
+            Data.writeDevices(context, "devices.json")
+
+
+            //Data.devices[position].name = holder.tvDeviceName.text as String
+            //Data.devices[position].ip = holder.tvDeviceIP.text as String
 
         }
 
-        //Devices.switch[position] = holder.switchDevice.isChecked
+        //Data.devices[position].state = holder.switchDevice.isChecked
 
     }
 
@@ -114,12 +122,12 @@ class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.
         }
         //override fun onClick(view: View) {
 
-            //Devices.switch[position] = switchDevice.isChecked
+            //Data.devices[position].state = switchDevice.isChecked
         //}
         //val clickListener = view.setOnClickListener { clickListener(part)}
     }
     fun showEditDialog(position: Int){
-        val dialog = context.let { Dialog(it) }
+        val dialog = Dialog(context)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(true)
         dialog.setContentView(R.layout.add_device)
@@ -140,17 +148,17 @@ class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.
         val swRGB = dialog.findViewById(R.id.sw_dialog_rgb) as Switch
         val swTW = dialog.findViewById(R.id.sw_dialog_tw) as Switch
 
-        dialogName.setText(Devices.deviceName[position])
-        dialogIp.setText(Devices.deviceIP[position])
-        var mode = Devices.mode[position]
-        var state = Devices.switch[position]
+        dialogName.setText(Data.devices[position].name)
+        dialogIp.setText(Data.devices[position].ip)
+        var mode = Data.devices[position].mode
+        var state = Data.devices[position].state
 
         when {
-            Devices.mode[position] == "RGB" -> {
+            Data.devices[position].mode == "RGB" -> {
                 swRGB.isChecked = true
             }
 
-            Devices.mode[position] == "TW" -> {
+            Data.devices[position].mode == "TW" -> {
                 swTW.isChecked = true
 
             }
@@ -181,18 +189,15 @@ class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.
 
         addBtn.setOnClickListener {
             //dialog.dismiss()
+
+
             if (dialogName.text.toString() != "" && dialogIp.text.toString() != "" && mode != ""){
-                Devices.removeData(position)
-                Devices.addDataPosition(
-                    dialogName.text.toString(),
-                    dialogIp.text.toString(),
-                    mode,
-                    state,
-                    position
-                )
+
+                var device = Device(dialogName.text.toString(), dialogIp.text.toString(), mode!!, false)
+                Data.devices.removeAt(position)
+                Data.devices.add(position, device)
+                Data.writeDevices(context, "devices.json")
                 notifyDataSetChanged()
-
-
             }
             else{
                 Toast.makeText(context,"please enter all values", Toast.LENGTH_SHORT).show()
@@ -227,9 +232,9 @@ class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.
         //dialogName.requestFocus()
 
         yesBtn.setOnClickListener {
-            Devices.deviceName.removeAt(position)
-            Devices.deviceIP.removeAt(position)
-            Devices.switch.removeAt(position)
+
+            Data.devices.removeAt(position)
+            Data.writeDevices(context, "devices.json")
             notifyDataSetChanged()
             dialog.cancel()
 

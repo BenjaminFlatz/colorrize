@@ -12,124 +12,17 @@
     tools:context=".ui.Fragment_1">
 
 
-    <!--SeekBar
-            android:id="@+id/seekBar_RED"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:max="255"
-            android:progressTint="@android:color/holo_red_light"
-            android:thumb="@drawable/wheel" />
-
-    <SeekBar
-            android:id="@+id/seekBar_GREEN"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:max="255"
-            android:progressTint="@android:color/holo_green_light"
-            android:thumb="@drawable/wheel" />
-
-    <SeekBar
-            android:id="@+id/seekBar_BLUE"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:max="255"
-            android:progressTint="@android:color/holo_blue_light"
-            android:thumb="@drawable/wheel" /-->
-
-
-    <WebView
-        android:id="@+id/wv_rgb_0"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <WebView
-        android:id="@+id/wv_rgb_1"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <WebView
-        android:id="@+id/wv_rgb_2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <WebView
-        android:id="@+id/wv_rgb_3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <WebView
-        android:id="@+id/wv_rgb_4"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <WebView
-        android:id="@+id/wv_rgb_5"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <WebView
-        android:id="@+id/wv_rgb_6"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <WebView
-        android:id="@+id/wv_rgb_7"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <WebView
-        android:id="@+id/wv_rgb_8"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <WebView
-        android:id="@+id/wv_rgb_9"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.skydoves.colorpickerview.ColorPickerView
         android:id="@+id/color_picker_view"
         android:layout_width="match_parent"
         android:layout_height="350dp"
         android:layout_gravity="center"
         android:elevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:palette="@drawable/colorrize_icon_ohne_hg"
+        app:palette="@drawable/palette"
         app:selector="@drawable/wheel" />
 
     <SeekBar
@@ -141,10 +34,13 @@
         android:max="255"
         android:progress="255"
         android:progressTint="@color/colorAccent"
+        android:thumbTint="@color/colorAccent1"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/color_picker_view" />
+
     <!--ImageView
         android:id="@+id/iv_rgb"
         android:layout_width="match_parent"
@@ -154,21 +50,7 @@
         android:elevation="2dp"
         android:src="@drawable/palette" /-->
 
-    <!--SeekBar
-        android:id="@+id/sb_rgb"
-        style="@style/Widget.AppCompat.SeekBar"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_margin="16dp"
-        android:layout_marginBottom="200dp"
-        android:max="1000"
-        android:progress="1000"
-        android:progressTint="@color/colorAccent"
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_rgb" /-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

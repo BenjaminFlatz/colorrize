@@ -2,8 +2,6 @@ package com.example.e4
 
 
 import android.annotation.SuppressLint
-import android.app.Dialog
-import android.content.Intent
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
@@ -12,14 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e4.ui.Fragment_1
 import com.example.e4.ui.Fragment_2
 import com.example.e4.ui.Fragment_3
-import com.google.zxing.integration.android.IntentIntegrator
-import com.google.zxing.integration.android.IntentResult
 import kotlinx.android.synthetic.main.activity_main.*
-import android.view.Window
 import android.widget.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.example.e4.models.Animations
-import com.example.e4.models.Devices
+import com.example.e4.models.Data
 import com.example.e4.ui.Fragment_4
 
 /**
@@ -33,6 +28,8 @@ class MainActivity() : AppCompatActivity(), Parcelable {
     private val ADD_TASK_REQUEST = 1
     var isFabRightOpen = false
     var isFabLeftOpen = false
+
+
 
     //val fm = supportFragmentManager
     //val fragmentTransaction = fm.beginTransaction()
@@ -49,13 +46,14 @@ class MainActivity() : AppCompatActivity(), Parcelable {
                         .replace(R.id.frame_container, Fragment_2()).commit()
                     return@OnNavigationItemSelectedListener true
                 }
+                /*
                 R.id.navigation_3 -> {
                     /*val intent = Intent(this@MainActivity, AnimActivity::class.java)
                     startActivity(intent)*/
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame_container, Fragment_3()).commit()
                     return@OnNavigationItemSelectedListener true
-                }
+                }*/
                 R.id.navigation_4 -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.frame_container, Fragment_4()).commit()
@@ -75,16 +73,16 @@ class MainActivity() : AppCompatActivity(), Parcelable {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        Devices.addNames()
+        //Devices.addNames()
         Animations.add_arguments()
+        Data.readDevices(this.applicationContext, "devices.json")
 
-        supportFragmentManager.beginTransaction()
-            .add(R.id.frame_container, Fragment_1()).commit()
+        supportFragmentManager.beginTransaction().add(R.id.frame_container, Fragment_1()).commit()
         bottom_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
+    }
 
-        }
+
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeByte(if (isFabRightOpen) 1 else 0)
         parcel.writeByte(if (isFabLeftOpen) 1 else 0)

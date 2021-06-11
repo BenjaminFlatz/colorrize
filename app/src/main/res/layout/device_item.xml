@@ -42,7 +42,7 @@
         android:layout_height="match_parent"
         android:layout_marginHorizontal="@dimen/object_margin"
         android:layout_weight="1"
-        android:theme="@style/AppTheme" />
+        android:theme="@style/AppTheme"/>
 
 
 </LinearLayout>
