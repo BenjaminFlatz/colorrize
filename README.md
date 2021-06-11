@@ -23,38 +23,32 @@ request example: 192.168.137.122/?r=0&g=0&b=0
 - [x] Activities and Fragments
 
 
-Color Picker
+### Color Picker
 
+<img src="https://raw.githubusercontent.com/BenjaminFlatz/colorrize/master/screenshots/rgb.png" width="300">
 
+### Tunable White
 
-Tunable White
+<img src="https://raw.githubusercontent.com/BenjaminFlatz/colorrize/master/screenshots/tw.png" width="300">
 
-<img src="https://raw.githubusercontent.com/BenjaminFlatz/colorrize/master/screenshots/Screenshot_1614519039.png" width="300">
+### Devices
 
-
-Animations
-
-<img src="https://raw.githubusercontent.com/BenjaminFlatz/colorrize/master/screenshots/Screenshot_1614519048.png" width="300">
-
-
-Devices
-
-<img src="https://raw.githubusercontent.com/BenjaminFlatz/colorrize/master/screenshots/Screenshot_1614519066.png" width="300">
+<img src="https://raw.githubusercontent.com/BenjaminFlatz/colorrize/master/screenshots/devices.png" width="300">
 
 
 
 
 
-LED unit (LED-M4)
+### LED unit (LED-M4)
 
 <img src="https://raw.githubusercontent.com/BenjaminFlatz/lumina/master/images/WaermeLeds.jpg" width="300">
   
   
-Control unit (Main_2)
+### Control unit (Main_2)
 
 <img src="https://raw.githubusercontent.com/BenjaminFlatz/lumina/master/images/WaermeMain.jpg" width="300">
 
 
-Case (Gehäuse_1.0)
+### Case (Gehäuse_1.0)
 
 <img src="https://raw.githubusercontent.com/BenjaminFlatz/lumina/master/images/purple.jpg" width="300">
