@@ -23,7 +23,7 @@ request example: 192.168.137.122/?r=0&g=0&b=0
 - [x] Activities and Fragments
 
 
-### Color Picker
+### RGB
 
 <img src="https://raw.githubusercontent.com/BenjaminFlatz/colorrize/master/screenshots/rgb.png" width="300">
 
