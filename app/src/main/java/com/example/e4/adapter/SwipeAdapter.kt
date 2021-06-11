@@ -1,4 +1,4 @@
-package com.example.colorrize.adapter
+package com.example.e4.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.colorrize.R
-import com.example.colorrize.models.SwipeModel
+import com.example.e4.R
+import com.example.e4.models.SwipeModel
 import java.util.ArrayList
 
 

@@ -1,4 +1,4 @@
-package com.example.colorrize.adapter
+package com.example.e4.adapter
 
 import android.app.Dialog
 import android.content.Context
@@ -6,13 +6,12 @@ import android.os.Vibrator
 import android.view.*
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
-import com.example.colorrize.R
-import com.example.colorrize.models.Data
-import com.example.colorrize.models.Device
+import com.example.e4.R
+import com.example.e4.models.Data
+import com.example.e4.models.Device
 import kotlinx.android.synthetic.main.device_item.view.*
 
 
-@Suppress("DEPRECATION")
 class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.ViewHolder>() {
 
 
@@ -51,23 +50,26 @@ class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.
         }*/
 
 
+        println("DeviceAdapter${Data.devices[position].javaClass}")
 
-        if (Data.devices[position].mode == "RGB"){
-            holder.ivDevice.setBackgroundResource(R.drawable.ic_rgb)
+        when (Data.devices[position].mode) {
+            "RGB" -> {
+                holder.ivDevice.setBackgroundResource(R.drawable.ic_rgb)
 
-        }
-        else if (Data.devices[position].mode == "TW"){
-            holder.ivDevice.setBackgroundResource(R.drawable.ic_tw)
+            }
+            "TW" -> {
+                holder.ivDevice.setBackgroundResource(R.drawable.ic_tw)
 
-        }
-        else {
-            println(Data.devices[position].mode)
+            }
+            else -> {
+                println("DeviceAdapter${Data.devices[position].mode}")
+            }
         }
 
 
         holder.tvDeviceName.text = Data.devices[position].name
         holder.tvDeviceIP.text = Data.devices[position].ip
-        holder.switchDevice.isChecked = Data.devices[position].state
+        holder.switchDevice.isChecked = Data.devices[position].state!!
 
         holder.layoutDevice.setOnClickListener(){
 
@@ -188,7 +190,7 @@ class DeviceAdapter(val context: Context)  : RecyclerView.Adapter<DeviceAdapter.
 
             if (dialogName.text.toString() != "" && dialogIp.text.toString() != "" && mode != ""){
 
-                var device = Device(dialogName.text.toString(), dialogIp.text.toString(), mode, false)
+                var device = Device(dialogName.text.toString(), dialogIp.text.toString(), mode!!, false)
                 Data.devices.removeAt(position)
                 Data.devices.add(position, device)
                 notifyDataSetChanged()

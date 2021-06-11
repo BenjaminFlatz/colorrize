@@ -1,4 +1,4 @@
-package com.example.colorrize.ui
+package com.example.e4.ui
 
 import android.app.Dialog
 import android.os.Bundle
@@ -7,9 +7,9 @@ import androidx.fragment.app.Fragment
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.colorrize.*
-import com.example.colorrize.adapter.AnimAdapter
-import com.example.colorrize.models.Animations
+import com.example.e4.*
+import com.example.e4.adapter.AnimAdapter
+import com.example.e4.models.Animations
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_fragment_3.*
 

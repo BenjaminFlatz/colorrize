@@ -1,4 +1,4 @@
-package com.example.colorrize.ui
+package com.example.e4.ui
 
 import android.graphics.Color
 import android.os.Bundle
@@ -7,9 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
-import com.example.colorrize.R
-import com.example.colorrize.models.Connection
-import com.example.colorrize.models.Data
+import com.example.e4.R
+import com.example.e4.models.Connection
 
 
 import com.goodiebag.protractorview.ProtractorView
@@ -44,13 +43,8 @@ class Fragment_2 : Fragment() {
                 b = ((progressReal)*brightness)/255
                 var color = Color.rgb(r,g,b)
 
-                for (i in Data.devices.indices) {
-                    if (Data.devices[i].state){
-                        Connection.post_color(color, i)
+                Connection.post_color(color)
 
-                    }
-
-                }
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {
@@ -78,14 +72,8 @@ class Fragment_2 : Fragment() {
                     tv_color_tw.text = "$colorTemp K"
                     var color = Color.rgb(r,g,b)
 
-                    for (i in Data.devices.indices) {
-                        if (Data.devices[i].state){
-                            Connection.post_color(color, i)
-                            //Toast.makeText(this@TWActivity, "$i", Toast.LENGTH_SHORT).show()
+                    Connection.post_color(color)
 
-                        }
-
-                    }
 
                 }
 

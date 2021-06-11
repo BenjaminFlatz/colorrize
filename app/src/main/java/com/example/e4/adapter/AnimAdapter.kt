@@ -1,4 +1,4 @@
-package com.example.colorrize.adapter
+package com.example.e4.adapter
 
 import android.app.Dialog
 import android.content.Context
@@ -11,10 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.anim_item.view.*
 import androidx.lifecycle.ViewModel
 import android.os.Vibrator
-import com.example.colorrize.models.Animations
-import com.example.colorrize.R
-import com.example.colorrize.models.Connection
-import com.example.colorrize.models.Data
+import com.example.e4.models.Animations
+import com.example.e4.R
+import com.example.e4.models.Connection
 
 
 @Suppress("DEPRECATION")
@@ -118,16 +117,9 @@ class AnimAdapter(val context: Context)  : RecyclerView.Adapter<AnimAdapter.View
 
 
     fun controlLeds(mode: Int, frequency: Int, brightness: Int){
-        for (i in Data.devices.indices) {
-            if (Data.devices[i].state){
-                var color = Color.rgb(r,g,b)
-                Connection.post_color(color = color, i)
-                //wvAnim[i].settings.javaScriptEnabled = true
-                //wvAnim[i].loadUrl(url)
-                //Toast.makeText(this@RGBActivity, "${Data.devices.ip[i]}", Toast.LENGTH_SHORT).show()
-            }
 
-        }
+        var color = Color.rgb(r,g,b)
+        Connection.post_color(color)
 
     }
     public fun updateData(viewModels: ArrayList<ViewModel>) {

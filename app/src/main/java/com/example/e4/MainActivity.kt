@@ -1,22 +1,21 @@
-package com.example.colorrize
+package com.example.e4
 
 
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
-import android.util.JsonWriter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.colorrize.ui.Fragment_1
-import com.example.colorrize.ui.Fragment_2
-import com.example.colorrize.ui.Fragment_3
+import com.example.e4.ui.Fragment_1
+import com.example.e4.ui.Fragment_2
+import com.example.e4.ui.Fragment_3
 import kotlinx.android.synthetic.main.activity_main.*
 import android.widget.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.example.colorrize.models.Animations
-import com.example.colorrize.models.Data
-import com.example.colorrize.ui.Fragment_4
+import com.example.e4.models.Animations
+import com.example.e4.models.Data
+import com.example.e4.ui.Fragment_4
 
 /**
  * this Activity handles the navigation between the 4 Fragments
@@ -73,20 +72,19 @@ class MainActivity() : AppCompatActivity(), Parcelable {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         //Devices.addNames()
         Animations.add_arguments()
+        Data.readDevices(this.applicationContext, "devices.json")
 
         supportFragmentManager.beginTransaction().add(R.id.frame_container, Fragment_1()).commit()
         bottom_navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        Data.readDevices("devices.json")
 
     }
 
     override fun onDestroy() {
 
         super.onDestroy()
-        Data.writeDevices("devices.json")
+        Data.readDevices(this.applicationContext, "devices.json")
 
 
     }

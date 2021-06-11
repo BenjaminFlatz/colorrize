@@ -1,4 +1,4 @@
-package com.example.colorrize.ui
+package com.example.e4.ui
 
 import android.annotation.SuppressLint
 import android.app.Dialog
@@ -8,10 +8,10 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.colorrize.*
-import com.example.colorrize.adapter.DeviceAdapter
-import com.example.colorrize.models.Data
-import com.example.colorrize.models.Device
+import com.example.e4.*
+import com.example.e4.adapter.DeviceAdapter
+import com.example.e4.models.Data
+import com.example.e4.models.Device
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_fragment_4.*
 
@@ -143,7 +143,8 @@ class Fragment_4 : Fragment() {
                 Data.devices.add(device)
 
                 recyclerView?.adapter?.notifyDataSetChanged()
-
+                println("Fragment_4${Data.devices}")
+                Data.writeDevices(context, "devices.json")
 
             }
             else{

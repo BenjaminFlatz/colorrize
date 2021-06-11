@@ -1,4 +1,4 @@
-package com.example.colorrize.models
+package com.example.e4.models
 
 import android.annotation.SuppressLint
 

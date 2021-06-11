@@ -1,4 +1,4 @@
-package com.example.colorrize.ui
+package com.example.e4.ui
 
 import android.graphics.Bitmap
 import android.graphics.Color
@@ -8,12 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SeekBar
 import androidx.fragment.app.Fragment
-import com.example.colorrize.R
-import com.example.colorrize.models.Connection
+import com.example.e4.R
+import com.example.e4.models.Connection
 import com.skydoves.colorpickerview.ColorPickerView
 import com.skydoves.colorpickerview.listeners.ColorListener
 import kotlinx.android.synthetic.main.activity_main.*
-import com.example.colorrize.models.Data
+import com.example.e4.models.Data
 
 
 /**
@@ -35,8 +35,8 @@ class Fragment_1 : Fragment() {
     var m = 0
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
 
 
@@ -46,6 +46,7 @@ class Fragment_1 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         val v = inflater.inflate(R.layout.fragment_fragment_1, container, false)
         val seekBar = v.findViewById(R.id.sb_rgb) as SeekBar
         val colorPickerView = v.findViewById(R.id.color_picker_view) as ColorPickerView
@@ -56,13 +57,9 @@ class Fragment_1 : Fragment() {
         seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar, progress: Int, fromUser: Boolean) {
 
-                for (i in Data.devices.indices) {
-                    if (Data.devices[i].state){
-                        Connection.post_color(colorPickerView.color, i)
-                  
-                    }
+                Connection.post_color(colorPickerView.color)
 
-                }
+
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar) {
@@ -76,23 +73,17 @@ class Fragment_1 : Fragment() {
         })
 
         colorPickerView.setColorListener(ColorListener { color, _ ->
-            
+
             brightness = seekBar.progress
 
-            r = (Color.red(color)*brightness)/1000
-            g = (Color.green(color)*brightness)/1000
-            b = (Color.blue(color)*brightness)/1000
+            r = (Color.red(color) * brightness) / 1000
+            g = (Color.green(color) * brightness) / 1000
+            b = (Color.blue(color) * brightness) / 1000
 
             val hex = "#" + Integer.toHexString(color)
 
-            for (i in Data.devices.indices) {
-                if (Data.devices[i].state){
-                    Connection.post_color(color, i)
-                }
-
-
-            }
-
+            println("Framgment_1${Data.devices}")
+            Connection.post_color(color)
         })
 /*
         v.iv_rgb.setOnTouchListener { _, event ->
