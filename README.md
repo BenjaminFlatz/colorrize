@@ -5,7 +5,7 @@ Control multiple LED-Modules with this app in the local network
 
 ### Description
 This is my exam project at the lbsfe1 in my apprenticeship as electronics technician. I built it to learn basic app development in Kotlin and connect this with my knowledge in electronics. Because I had no experience in app development this project was a learning experience for me.
-This LED control app works with an ESP8266 Module the colors are transmitted via the rgb values in the url in addition you can add mode, frequency and brightness.
+This LED control app works with an ESP8266 Module the colors are transmitted via POST request.
 request example: 192.168.137.122/?r=0&g=0&b=0
 
 
